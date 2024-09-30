@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.product-slider {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 40px 0;
+    display: block; /* Default visibility for mobile */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 60%;
+    max-width: 60%;
+    transition: all 0.5s ease;
+    opacity: 0.7;
+    transform: scale(0.8);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.desktop-message {
+    display: none; /* Hidden by default */
+}
+
+/* Only show the desktop message and hide slider on larger screens */
+@media (min-width: 768px) {
+    .product-slider {
+        display: none; /* Hide the slider for desktop */
+    }
+    .desktop-message {
+        display: block; /* Show the message for desktop */
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+}
